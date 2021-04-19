@@ -1,7 +1,7 @@
 # sweet-shop-frontend
 Flatiron Phase 1 Project - The Sweet Shop!
 
-The files here containt the front-end components of Eni & Brenna's Sweet Shop app!
+The files here contain the front-end components of Eni & Brenna's Sweet Shop app!
 
 The intent is to garner interest on some different dessert options for the online Sweet Shop.
 
