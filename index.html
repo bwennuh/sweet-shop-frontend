@@ -4,19 +4,19 @@
   <script defer src="./script.js"></script>
   <link rel="stylesheet" href="./style.css">
   <!-- <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css"> -->
-  <Title>Welcome to the Sweet Shop!</Title>
+  <Title>Sweet Shop</Title>
 </head>
 
 <body>
   <div class id="navbar">
-    <h1 id="sweet-shop">Sweet Shop</h1>
+    <h1 id="sweet-shop">Welcome to the Sweet Shop!</h1>
 
     <nav class="navbar">
-      <button id="dessert-button">See our dessert options!</button>
+      <button id="dessert-button">See our dessert options! 🍰</button>
     </nav>
   </div>  
 
-  <div class="desserts">
+  <div class="dessert-list">
     <ul class="dessert-list" id="list-group">
             <!-- Placeholder list items --> 
             <li class="list-group-item">Ice Cream</li>
@@ -27,6 +27,52 @@
     </ul>
   </div>
 
-</body>
+  <div class="dessert-cards">
+    <div class="card text-center">
+        <h2 class="card-header">
+            Dessert Details
+        </h2>
 
+        <div class="card-body">
+            <img id="dessert-img" class="card-img-top" src="https://i.pinimg.com/736x/ac/90/57/ac9057702e7731079965044bbc0493bd.jpg">
+            <h3 id="dessert-name" class="card-title">[replace me with dessert name]</h5>
+            <p id="dessert-info" class="card-text">[replace with additional content]</p>
+            <button id="like-button">Like Dessert 👍</button>
+            <button id="dislike-button">Dislike Dessert 👎</button>
+        </div>
+
+        <div class="card-footer">
+            <h4 id="dessert-cost">Dessert cost: </h5>
+        </div>
+    </div>
+  </div>
+
+  <div class="recommendations">
+      <form id="dessert-form">
+          <h3 class="mb-2">Recommend a new dessert!</h3>
+
+          <div class="form-group">
+              <label for="dessert-name">Dessert</label>
+              <input name="dessertName" type="text" class="form-control" placeholder="Enter a dessert">
+          </div>
+
+          <div class="form-group">
+              <label for="dessert-flavor">Flavor</label>
+              <select class="form-control">
+                  <option>Vanilla</option>
+                  <option>Strawberry</option>
+                  <option>Chocolate</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+              <label for="comments">Comments</label>
+              <input name="userComments" type="text" class="form-control" placeholder="Enter any comments here">
+          </div>
+
+          <button type="submit">Submit</button>
+      </form>
+  </div>
+
+</body>
 </html>
