@@ -31,6 +31,14 @@ function getDesserts() {
 function renderDesserts(dessert) {
   const name = document.getElementById("dessert-name");
   name.innerText = dessert.name;
+
+  const optionsDropDown = document.getElementById("dessert-list");
+
+  const option = document.createElement("option");
+  option.value = dessert.name;
+  option.innerText = dessert.name;
+
+  optionsDropDown.appendChild(option);
   
   console.log(dessert.name);
 
