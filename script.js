@@ -11,10 +11,15 @@ getDesserts();
 //TODO Functions we'll want to include
 
 function getDesserts() {
-  fetch(dessertsURL)
-  .then(resp => resp.json())
-  // .then(data => console.log(data))
-  .then(data => data.forEach(renderDesserts))
+    const button = document.querySelector("#dessert-button")
+    button.addEventListener("click", ()=>{
+        fetch(dessertsURL)
+        .then(resp => resp.json())
+        // .then(data => console.log(data))
+        .then(data => data.forEach(renderDesserts))
+      
+    })
+  
 }
 
 // function sortDesserts() {
@@ -27,7 +32,7 @@ function renderDesserts(dessert) {
   const name = document.getElementById("dessert-name");
   name.innerText = dessert.name;
   
-  // console.log(dessert.name);
+  console.log(dessert.name);
 
   const image = document.getElementById("dessert-img");
   image.src = dessert.image;
