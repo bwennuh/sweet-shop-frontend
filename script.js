@@ -9,7 +9,7 @@ const recURL = "http://localhost:3000/recommendations/"
 getDesserts();
 formsubmit();
 
-//getRecommendations();
+getRecommendations();
 
 
 //TODO Functions we'll want to include
@@ -157,15 +157,16 @@ function formsubmit (){
   })
 }
 
-// function getRecommendations() {
-//     fetch(recURL)
-//       .then(resp => resp.json())
-//       .then(data => data.forEach( () => {
-//         const recItem = document.createElement("li")
-//         recItem.className = "rec-test-item"
-//         recItem.innerText = data.name
-//         document.querySelector("ol").appendChild(recItem);
-//       }))
-// }
+function getRecommendations() {
+    fetch(recURL)
+      .then(resp => resp.json())
+      .then(data => data.forEach( eachRec ))
+}
+function eachRec (data){
+  console.log(data);
+const newDataName = document.createElement("li")
+newDataName.innerText = data.name
+document.querySelector("#rec-list").appendChild(newDataName)
 
+}
 
