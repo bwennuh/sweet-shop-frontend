@@ -9,6 +9,8 @@ const recURL = "http://localhost:3000/recommendations/"
 getDesserts();
 formsubmit();
 
+//getRecommendations();
+
 
 //TODO Functions we'll want to include
 
@@ -129,35 +131,41 @@ function formsubmit (){
       method: "POST",
       body: JSON.stringify(newDessert)
     }
+    event.target.reset();
+
+    const ol = document.querySelector("ol");
 
     fetch(recURL, newSubmit)
         .then(resp => resp.json())
         //.then((newData) => console.log(newData))
+        .then(recData => {
+          const newDessertItem = document.createElement("li")
+          newDessertItem.className = "rec-list-item"
+          newDessertItem.innerText = recData.name
+          console.log(newDessertItem);
+      
+          ol.appendChild(newDessertItem);
+        })
 
-    const newDessertItem = document.createElement("li")
-    newDessertItem.className = "rec-list-item"
-    newDessertItem.innerText = newDessert.name
-    console.log(newDessertItem);
+    // const newDessertItem = document.createElement("li")
+    // newDessertItem.className = "rec-list-item"
+    // newDessertItem.innerText = newDessert.name
+    // console.log(newDessertItem);
 
-    const ol = document.querySelector("ol")
-    ol.appendChild(newDessertItem);
-    
-    event.target.reset();
+    // const ol = document.querySelector("ol")
+    // ol.appendChild(newDessertItem);
   })
 }
 
 // function getRecommendations() {
-//   const ol = document.querySelector("ol")
-
 //     fetch(recURL)
 //       .then(resp => resp.json())
 //       .then(data => data.forEach( () => {
 //         const recItem = document.createElement("li")
 //         recItem.className = "rec-test-item"
 //         recItem.innerText = data.name
-//         ol.appendChild(recItem);
+//         document.querySelector("ol").appendChild(recItem);
 //       }))
 // }
-
 
 
