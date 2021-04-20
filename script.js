@@ -9,6 +9,7 @@ const recURL = "http://localhost:3000/recommendations/"
 getDesserts();
 formsubmit();
 
+
 //TODO Functions we'll want to include
 
 function getDesserts() {
@@ -112,10 +113,23 @@ function formsubmit (){
   const form = document.querySelector("#dessert-form")
 form.addEventListener("submit", (event)=>{
   event.preventDefault();
-  const dessertInput = document.querySelector("h3")
-  debugger;
-  //dessertInput.innerText = 
+  // const dessertInput = document.querySelector("h3")
+  // debugger;
+  // dessertInput.innerText = event.target[o].value
+  const newDessert ={
+    name: event.target[0].value
+
+  }
+  const newSubmit = {
+    headers: {"Content-Type": "application/json"},
+    method: "POST",
+    body: JSON.stringify(newDessert)
+  }
+  fetch(recURL, newSubmit)
+        .then(resp => resp.json())
+        //.then((newData) => console.log(newData))
 })
 }
+
 
 
