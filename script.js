@@ -16,12 +16,12 @@ function getDesserts() {
     button.addEventListener("click", ()=>{
         fetch(dessertsURL)
         .then(resp => resp.json())
-        // .then(data => console.log(data))
         .then(data => data.forEach(renderDesserts))
     })
 }
 
 function renderDesserts(dessert) {
+
   // Make dessert list
   const dessertList = document.getElementById("list-group");
   const dessertOption = document.createElement("li");
@@ -30,38 +30,77 @@ function renderDesserts(dessert) {
   dessertList.appendChild(dessertOption);
 
   dessertOption.addEventListener("click", () => {
+
+    //dessertOption.id = dessert.id;
+    //console.log(dessertOption.id)
+
     const name = document.getElementById("dessert-name");
-    // const name = document.createElement("h3");
     name.innerText = dessert.name;
     name.className = "dessert-name"
-    // dessertOption.appendChild(name);
-  
-    console.log(name);
-    console.log(name.innerText);
   
     const image = document.getElementById("dessert-img");
-    // const image = document.createElement("image");
     image.className = "dessert-image";
     image.src = dessert.image;
-    // dessertOption.appendChild(image);
   
     const cost = document.getElementById("dessert-cost");
-    // const cost = documennt.createElement("p");
     cost.className = "dessert-cost";
     cost.innerText = `Dessert cost: $${dessert.cost}`;
+
+    const likeCount = document.querySelector("span.likes");
+    likeCount.innerText = dessert.likes;
+    likeCount.id = dessert.id;
+    console.log(likeCount.id);
+
+    const likeButton = document.getElementById("like-button");
+
+    const dislikeButton = document.getElementById("dislike-button");
+  
+    function likeDessert() {
+      likeButton.addEventListener("click", (event) => {
+
+
+        // likeCount.innerText = parseInt(likeCount.innerText) + 1;
+        dessert.likes = parseInt(dessert.likes) + 1;
+        console.log(dessert.likes)
+
+        const newLikes = {
+          likes: dessert.likes + 1
+        }
+        
+        const reqObj = {
+          headers: {"Content-Type": "application/json"},
+          method: "PATCH",
+          body: JSON.stringify(newLikes)
+        }
+        //debugger;
+
+        //console.log(dessertOption.id)
+
+        // fetch(dessertsURL+event.target.id, reqObj)
+        // .then(resp => resp.json())
+        // .then((updatedDessert) => 
+        //   likeCount.innerText = updatedDessert.likes)
+      })
+
+      // dislikeButton.addEventListener("click", (event) => {
+      //   //likeCount.innerText = parseInt(likeCount.innerText) - 1;
+      //   dessert.likes = parseInt(dessert.likes) - 1;
+
+      //   const removeLikes = {
+      //     likes: dessert.likes - 1
+      //   }
+        
+      //   const reqObj = {
+      //     headers: {"Content-Type": "application/json"},
+      //     method: "PATCH",
+      //     body: JSON.stringify(removeLikes)
+      //   }
+      // })
+      
+    }
+
+    likeDessert();
   })
-
-
-  // function likeDessert() {
-  //   likeButton.addEventListener("click", (event) => {
-  //     const likeCount = document.getElementById("like-counter");
-  
-  //     likeCount.innerText = parseInt(likeCount.innerText) + 1;
-  
-  //   })
-  // }
-
-
 
 }
 
