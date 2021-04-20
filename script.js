@@ -109,35 +109,55 @@ function renderDesserts(dessert) {
   })
 
 }
+
 function formsubmit (){
   const form = document.querySelector("#dessert-form")
-form.addEventListener("submit", (event)=>{
+  form.addEventListener("submit", (event)=>{
   event.preventDefault();
   // const dessertInput = document.querySelector("h3")
   //debugger;
   // dessertInput.innerText = event.target[o].value
-  const newDessert ={
-    name: event.target[0].value,
-    flavor: event.target[1].value,
-    comments: event.target[2].value
 
-  }
-  
-  const newSubmit = {
-    headers: {"Content-Type": "application/json"},
-    method: "POST",
-    body: JSON.stringify(newDessert)
-  }
-  fetch(recURL, newSubmit)
+    const newDessert ={
+      name: event.target[0].value,
+      flavor: event.target[1].value,
+      comments: event.target[2].value
+    }
+    
+    const newSubmit = {
+      headers: {"Content-Type": "application/json"},
+      method: "POST",
+      body: JSON.stringify(newDessert)
+    }
+
+    fetch(recURL, newSubmit)
         .then(resp => resp.json())
         //.then((newData) => console.log(newData))
-        const newDessertitem = document.createElement("li")
-        newDessertitem.innerText = newDessert.name
-        console.log(newDessertitem);
-        const ol = document.querySelector("ol")
-        ol.appendChild(newDessertitem);
-})
+
+    const newDessertItem = document.createElement("li")
+    newDessertItem.className = "rec-list-item"
+    newDessertItem.innerText = newDessert.name
+    console.log(newDessertItem);
+
+    const ol = document.querySelector("ol")
+    ol.appendChild(newDessertItem);
+    
+    event.target.reset();
+  })
 }
+
+// function getRecommendations() {
+//   const ol = document.querySelector("ol")
+
+//     fetch(recURL)
+//       .then(resp => resp.json())
+//       .then(data => data.forEach( () => {
+//         const recItem = document.createElement("li")
+//         recItem.className = "rec-test-item"
+//         recItem.innerText = data.name
+//         ol.appendChild(recItem);
+//       }))
+// }
 
 
 
