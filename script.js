@@ -7,6 +7,7 @@ const recURL = "http://localhost:3000/recommendations/"
 
 //* Functions to run at start
 getDesserts();
+formsubmit();
 
 //TODO Functions we'll want to include
 
@@ -64,7 +65,7 @@ function renderDesserts(dessert) {
         console.log(dessert.likes)
 
         const newLikes = {
-          likes: dessert.likes + 1
+          likes: dessert.likes 
         }
         
         const reqObj = {
@@ -76,32 +77,45 @@ function renderDesserts(dessert) {
 
         //console.log(dessertOption.id)
 
-        // fetch(dessertsURL+event.target.id, reqObj)
-        // .then(resp => resp.json())
-        // .then((updatedDessert) => 
-        //   likeCount.innerText = updatedDessert.likes)
+        fetch(dessertsURL+likeCount.id, reqObj)
+        .then(resp => resp.json())
+        .then((updatedDessert) => 
+          likeCount.innerText = updatedDessert.likes)
       })
 
-      // dislikeButton.addEventListener("click", (event) => {
-      //   //likeCount.innerText = parseInt(likeCount.innerText) - 1;
-      //   dessert.likes = parseInt(dessert.likes) - 1;
+      dislikeButton.addEventListener("click", (event) => {
+      
+        dessert.likes = parseInt(dessert.likes) - 1;
 
-      //   const removeLikes = {
-      //     likes: dessert.likes - 1
-      //   }
+        const removeLikes = {
+          likes: dessert.likes 
+        }
         
-      //   const reqObj = {
-      //     headers: {"Content-Type": "application/json"},
-      //     method: "PATCH",
-      //     body: JSON.stringify(removeLikes)
-      //   }
-      // })
+        const reqObjTwo = {
+          headers: {"Content-Type": "application/json"},
+          method: "PATCH",
+          body: JSON.stringify(removeLikes)
+        }
+        fetch(dessertsURL+likeCount.id, reqObjTwo)
+        .then(resp => resp.json())
+        .then((updatedDessertDislikes) => 
+          likeCount.innerText = updatedDessertDislikes.likes)
+      })
       
     }
 
     likeDessert();
   })
 
+}
+function formsubmit (){
+  const form = document.querySelector("#dessert-form")
+form.addEventListener("submit", (event)=>{
+  event.preventDefault();
+  const dessertInput = document.querySelector("h3")
+  debugger;
+  //dessertInput.innerText = 
+})
 }
 
 
