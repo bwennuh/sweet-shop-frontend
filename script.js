@@ -114,12 +114,15 @@ function formsubmit (){
 form.addEventListener("submit", (event)=>{
   event.preventDefault();
   // const dessertInput = document.querySelector("h3")
-  // debugger;
+  //debugger;
   // dessertInput.innerText = event.target[o].value
   const newDessert ={
-    name: event.target[0].value
+    name: event.target[0].value,
+    flavor: event.target[1].value,
+    comments: event.target[2].value
 
   }
+  
   const newSubmit = {
     headers: {"Content-Type": "application/json"},
     method: "POST",
@@ -128,6 +131,11 @@ form.addEventListener("submit", (event)=>{
   fetch(recURL, newSubmit)
         .then(resp => resp.json())
         //.then((newData) => console.log(newData))
+        const newDessertitem = document.createElement("li")
+        newDessertitem.innerText = newDessert.name
+        console.log(newDessertitem);
+        const ol = document.querySelector("ol")
+        ol.appendChild(newDessertitem);
 })
 }
 
