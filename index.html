@@ -15,22 +15,23 @@
       <button id="dessert-button">See our dessert options! 🍰</button>
     </nav>
   </div>  
-    <select id="dessert-list" name="dessert-list">
+    <!-- <select id="dessert-list" name="dessert-list">
       <option selected disabled>Choose a dessert</option>
-    </select>
- <!--<div class="dessert-list">
-    <ul class="dessert-list" id="list-group"> -->
-            <!-- Placeholder list items --> 
-            <!--<li class="list-group-item">Ice Cream</li>
+    </select> -->
+
+ <div class="dessert-list">
+    <ul class="dessert-list" id="list-group">
+           <!-- <li class="list-group-item">Ice Cream</li>
             <li class="list-group-item">Brownie</li>
             <li class="list-group-item">Cookie</li>
             <li class="list-group-item">Pie</li>
-            <li class="list-group-item">Cake</li>
+            <li class="list-group-item">Cake</li> -->
     </ul>
-  </div> -->
+  </div>
 
   <div class="dessert-cards">
     <div class="card text-center">
+
         <h2 class="card-header">
             Dessert Details
         </h2>
@@ -39,13 +40,16 @@
             <img id="dessert-img" class="card-img-top" src="https://i.pinimg.com/736x/ac/90/57/ac9057702e7731079965044bbc0493bd.jpg">
             <h3 id="dessert-name" class="card-title">[replace me with dessert name]</h3>
             <p id="dessert-info" class="card-text">[replace with additional content]</p>
-            <button id="like-button">Like Dessert 👍</button>
-            <button id="dislike-button">Dislike Dessert 👎</button>
+            <h4 id="dessert-cost">Dessert cost: </h4>
         </div>
 
         <div class="card-footer">
-            <h4 id="dessert-cost">Dessert cost: </h4>
+            <button id="like-button">Like Dessert 👍</button>
+            <button id="dislike-button">Dislike Dessert 👎</button>
+            <br>
+            <label for="like-counter" name="like-counter"><span id="like-counter">0</span> likes</label>
         </div>
+
     </div>
   </div>
 

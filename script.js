@@ -11,44 +11,58 @@ getDesserts();
 //TODO Functions we'll want to include
 
 function getDesserts() {
-    const button = document.querySelector("#dessert-button")
+    const button = document.querySelector("#dessert-button");
+
     button.addEventListener("click", ()=>{
         fetch(dessertsURL)
         .then(resp => resp.json())
         // .then(data => console.log(data))
         .then(data => data.forEach(renderDesserts))
-      
     })
-  
 }
-
-// function sortDesserts() {
-//   const cardBody = document.querySelector(".card-body");
-//   const cardFooter = document.querySelector(".card-footer");
-
-// }
 
 function renderDesserts(dessert) {
-  const name = document.getElementById("dessert-name");
-  name.innerText = dessert.name;
+  // Make dessert list
+  const dessertList = document.getElementById("list-group");
+  const dessertOption = document.createElement("li");
+  dessertOption.className = "list-group-item";
+  dessertOption.innerText = dessert.name;
+  dessertList.appendChild(dessertOption);
 
-  const optionsDropDown = document.getElementById("dessert-list");
-
-  const option = document.createElement("option");
-  option.value = dessert.name;
-  option.innerText = dessert.name;
-
-  optionsDropDown.appendChild(option);
+  dessertOption.addEventListener("click", () => {
+    const name = document.getElementById("dessert-name");
+    // const name = document.createElement("h3");
+    name.innerText = dessert.name;
+    name.className = "dessert-name"
+    // dessertOption.appendChild(name);
   
-  console.log(dessert.name);
+    console.log(name);
+    console.log(name.innerText);
+  
+    const image = document.getElementById("dessert-img");
+    // const image = document.createElement("image");
+    image.className = "dessert-image";
+    image.src = dessert.image;
+    // dessertOption.appendChild(image);
+  
+    const cost = document.getElementById("dessert-cost");
+    // const cost = documennt.createElement("p");
+    cost.className = "dessert-cost";
+    cost.innerText = `Dessert cost: $${dessert.cost}`;
+  })
 
-  const image = document.getElementById("dessert-img");
-  image.src = dessert.image;
 
-  // console.log(dessert.image);
+  // function likeDessert() {
+  //   likeButton.addEventListener("click", (event) => {
+  //     const likeCount = document.getElementById("like-counter");
+  
+  //     likeCount.innerText = parseInt(likeCount.innerText) + 1;
+  
+  //   })
+  // }
 
-  const cost = document.getElementById("dessert-cost");
-  cost.innerText = `Dessert cost: $${dessert.cost}`;
 
-  // const flavors;
+
 }
+
+
