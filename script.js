@@ -202,18 +202,18 @@ function renderRecommendations(data){
   recName.innerText = data.name
 
   const recLikeButton = document.createElement("button")
-  recLikeButton.innerText = data.likes;
+  let likeCounter = data.likes;
 
   recLikeButton.addEventListener("click", (event) => {
-    recLikeButton.innerText = parseInt(data.likes + 1)
+    likeCounter = parseInt(data.likes + 1)
     
-    event.target.innerText = `${i} likes`
+    event.target.innerText = `${likeCounter} likes`
 
 
-   newDataLikeButton.innerText = `${recLikes} likes`
-   newDataName.append(newDataLikeButton)
+   
+   recName.append(recLikeButton)
 
-    document.querySelector("#rec-list").appendChild(newDataName)
+    document.querySelector("#rec-list").appendChild(recName)
   })
 }
 
