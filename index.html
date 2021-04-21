@@ -8,83 +8,92 @@
 </head>
 
 <body>
-  <div class id="navbar">
+  <div class="navbar" id="navbar">
     <h1 id="sweet-shop">Welcome to the Sweet Shop!</h1>
 
-    <nav class="navbar">
+    <!-- <nav class="navbar">
       <button id="dessert-button">See our dessert options! 🍰</button>
-    </nav>
+    </nav> -->
   </div>  
-    <!-- <select id="dessert-list" name="dessert-list">
-      <option selected disabled>Choose a dessert</option>
-    </select> -->
 
- <div class="dessert-list">
-    <ul class="dessert-list" id="list-group">
-           <!-- <li class="list-group-item">Ice Cream</li>
-            <li class="list-group-item">Brownie</li>
-            <li class="list-group-item">Cookie</li>
-            <li class="list-group-item">Pie</li>
-            <li class="list-group-item">Cake</li> -->
-    </ul>
-  </div>
-
-  <div class="dessert-cards">
-    <div class="card text-center">
-
-        <h2 class="card-header">
-            Dessert Details
-        </h2>
-
-        <div class="card-body">
-            <img id="dessert-img" class="card-img-top" src="https://i.pinimg.com/736x/ac/90/57/ac9057702e7731079965044bbc0493bd.jpg">
-            <h3 id="dessert-name" class="card-title">[replace me with dessert name]</h3>
-            <p id="dessert-info" class="card-text">[replace with additional content]</p>
-            <h4 id="dessert-cost">Dessert cost: </h4>
-        </div>
-
-        <div class="card-footer">
-            <button id="like-button">Like Dessert 👍</button>
-            <button id="dislike-button">Dislike Dessert 👎</button>
-            <br>
-            <label for="like-counter" name="like-counter"><span id="" class="likes">0</span> likes</label>
-        </div>
-
+  <div class="main">
+    <div class="dessert-button">
+      <button id="dessert-button">See our dessert options! 🍰</button>
     </div>
-  </div>
 
-  <div class="recommendations">
-      <form id="dessert-form">
-          <h3 class="mb-2">Recommend a new dessert!</h3>
+      <!-- <select id="dessert-list" name="dessert-list">
+        <option selected disabled>Choose a dessert</option>
+      </select> -->
 
-          <div class="form-group">
-              <label for="dessert-name">Dessert</label>
-              <input name="dessertName" type="text" class="form-control" placeholder="Enter a dessert">
+  <div class="dessert-list">
+      <ul class="dessert-list" id="list-group">
+            <!-- <li class="list-group-item">Ice Cream</li>
+              <li class="list-group-item">Brownie</li>
+              <li class="list-group-item">Cookie</li>
+              <li class="list-group-item">Pie</li>
+              <li class="list-group-item">Cake</li> -->
+      </ul>
+    </div>
+
+    <div class="dessert-cards">
+      <div class="card text-center">
+
+          <h2 class="card-header">
+              Dessert Details
+          </h2>
+
+          <div class="card-body">
+              <img id="dessert-img" class="card-img-top" src="https://i.pinimg.com/736x/ac/90/57/ac9057702e7731079965044bbc0493bd.jpg">
+              <h3 id="dessert-name" class="card-title">[replace me with dessert name]</h3>
+              <p id="dessert-info" class="card-text">[replace with additional content]</p>
+              <h4 id="dessert-cost">Dessert cost: </h4>
           </div>
 
-          <div class="form-group">
-              <label for="dessert-flavor">Flavor</label>
-              <select class="form-control">
-                  <option id ="vanilla-option">Vanilla</option>
-                  <option id ="strawberry-option">Strawberry</option>
-                  <option id ="chocolate-option">Chocolate</option>
-              </select>
+          <div class="card-footer">
+              <button id="like-button">Like Dessert 👍</button>
+              <button id="dislike-button">Dislike Dessert 👎</button>
+              <br>
+              <label for="like-counter" name="like-counter"><span id="" class="likes">0</span> likes</label>
           </div>
 
-          <div class="form-group">
-              <label for="comments">Comments</label>
-              <input name="userComments" type="text" class="form-control" placeholder="Enter any comments here">
-          </div>
-
-          <button type="submit">Submit</button>
-      </form>
-
-      <div class="recommendations-list">
-        <ol id="rec-list"><b>Recommendations List:</b>
-          <!--for recommendations list-->
-        </ol>
       </div>
-      
+    </div>
+
+    <div class="recommendations">
+
+        <form id="dessert-form">
+            <h3 class="mb-2">Recommend a new dessert!</h3>
+
+            <div class="form-group">
+                <label for="dessert-name">Dessert</label>
+                <input name="dessertName" type="text" class="form-control" placeholder="Enter a dessert">
+            </div>
+
+            <div class="form-group">
+                <label for="dessert-flavor">Flavor</label>
+                <select class="form-control">
+                    <option id="vanilla-option">Vanilla</option>
+                    <option id="strawberry-option">Strawberry</option>
+                    <option id="chocolate-option">Chocolate</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Comments</label>
+                <input name="userComments" type="text" class="form-control" placeholder="Enter any comments here">
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="recommendations-list">
+          <ol id="rec-list"><b>Recommendations List:</b>
+            <!--for recommendations list-->
+          </ol>
+        </div>
+        
+    </div>
+
   </div>
 
 </body>
