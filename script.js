@@ -202,18 +202,31 @@ function renderRecommendations(data){
   recName.innerText = data.name
 
   const recLikeButton = document.createElement("button")
+  recLikeButton.innerText = `${data.likes} likes`
   let likeCounter = data.likes;
 
   recLikeButton.addEventListener("click", (event) => {
-    likeCounter = parseInt(data.likes + 1)
+    likeCounter += 1 
     
     event.target.innerText = `${likeCounter} likes`
+    const updatedRecLiker = {
+      likes: likeCounter
+    }
 
+    const patchLikes = {
+      headers: {"Content-Type": "application/json"},
+      method: "PATCH",
+      body: JSON.stringify(updatedRecLiker)
+    }
 
-   
-   recName.append(recLikeButton)
+    fetch(recURL+data.id, patchLikes)
+    .then(resp => resp.json())
+    .then(updatedliker => console.log(updatedliker))
+    
+  })
+
+  recName.append(recLikeButton)
 
     document.querySelector("#rec-list").appendChild(recName)
-  })
 }
 
