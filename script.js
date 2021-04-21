@@ -131,7 +131,8 @@ function formsubmit() {
     const newDessertRec ={
       name: event.target[0].value,
       flavor: event.target[1].value,
-      comments: event.target[2].value
+      comments: event.target[2].value,
+      likes: 0
     }
     
     // Make a POST request to update the db.json file with each new recommendation object
@@ -153,6 +154,20 @@ function formsubmit() {
         const newDessertItem = document.createElement("li")
         newDessertItem.className = "rec-list-item"
         newDessertItem.innerText = recData.name
+
+        const newLikeButton = document.createElement("button")
+        newLikeButton.id = newDessertRec.id
+        
+        let i = newDessertRec.likes;
+        newLikeButton.innerText = `${i} likes`
+
+        newLikeButton.addEventListener("click", (event) => {
+          i++
+          event.target.innerText = `${i} likes`
+          
+        })
+
+        newDessertItem.append(newLikeButton)
       
         ol.appendChild(newDessertItem);
       })
@@ -169,7 +184,14 @@ function getRecommendations() {
 // Render all dessert recommendation names and place into recommendations list
 function renderRecommendations(data){
   const newDataName = document.createElement("li")
+  newDataName.className = "rec-list-item"
   newDataName.innerText = data.name
+
+  const newDataLikeButton = document.createElement("button")
+  let recLikes = 0;
+  newDataLikeButton.innerText = `${recLikes} likes`
+  newDataName.append(newDataLikeButton)
+
   document.querySelector("#rec-list").appendChild(newDataName)
 }
 
