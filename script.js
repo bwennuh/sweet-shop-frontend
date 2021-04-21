@@ -150,20 +150,34 @@ function formsubmit() {
     // Add new dessert recommendation name to recommendations list after POST request
     fetch(recURL, newSubmit)
       .then(resp => resp.json())
-      .then(recData => {
+      .then(data => {
         const newDessertItem = document.createElement("li")
         newDessertItem.className = "rec-list-item"
-        newDessertItem.innerText = recData.name
+        newDessertItem.innerText = data.name
 
         const newLikeButton = document.createElement("button")
-        newLikeButton.id = newDessertRec.id
-        
-        let i = newDessertRec.likes;
+        newLikeButton.id = data.id
+
+        let i = data.likes;
         newLikeButton.innerText = `${i} likes`
 
         newLikeButton.addEventListener("click", (event) => {
           i++
           event.target.innerText = `${i} likes`
+
+          const updatedRecLikes = {
+            likes: i
+          }
+
+          const patchSubmit = {
+            headers: {"Content-Type": "application/json"},
+            method: "PATCH",
+            body: JSON.stringify(updatedRecLikes)
+          }
+
+          fetch(recURL+data.id, patchSubmit)
+          .then(resp => resp.json())
+          .then(updatedData => console.log(updatedData))
           
         })
 
@@ -183,15 +197,23 @@ function getRecommendations() {
 
 // Render all dessert recommendation names and place into recommendations list
 function renderRecommendations(data){
-  const newDataName = document.createElement("li")
-  newDataName.className = "rec-list-item"
-  newDataName.innerText = data.name
+  const recName = document.createElement("li")
+  recName.className = "rec-list-item"
+  recName.innerText = data.name
 
-  const newDataLikeButton = document.createElement("button")
-  let recLikes = 0;
-  newDataLikeButton.innerText = `${recLikes} likes`
-  newDataName.append(newDataLikeButton)
+  const recLikeButton = document.createElement("button")
+  recLikeButton.innerText = data.likes;
 
-  document.querySelector("#rec-list").appendChild(newDataName)
+  recLikeButton.addEventListener("click", (event) => {
+    recLikeButton.innerText = parseInt(data.likes + 1)
+    
+    event.target.innerText = `${i} likes`
+
+
+   newDataLikeButton.innerText = `${recLikes} likes`
+   newDataName.append(newDataLikeButton)
+
+    document.querySelector("#rec-list").appendChild(newDataName)
+  })
 }
 
