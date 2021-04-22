@@ -51,6 +51,7 @@ body {
   align-content: center;
   padding: 20px 50px 20px 50px;
   margin: 0px 50px;
+  height: fit-content;
 
   border: rgb(170, 48, 89) 5px solid;
   border-radius: 25px;
@@ -63,12 +64,14 @@ body {
   font-weight: 750;
   border-radius: 5px;
   border: rgb(170, 48, 89) 2px solid;
-  height: 50px;
+  height: fit-content;
   width: auto;
+  display: flex;
+  border-radius: 10px;
 }
 
 #dessert-button:hover {
-  color: blue;
+  color: palevioletred;
 }
 
 /* ----------------------------------------------------------------*/
@@ -82,6 +85,7 @@ div.dessert-list {
 
   border: rgb(170, 48, 89) 5px solid;
   border-radius: 25px;
+  display: flex;
 }
 
 /* Formatting for the dessert option list */
