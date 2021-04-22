@@ -46,6 +46,10 @@ function renderDesserts(dessert) {
     const image = document.getElementById("dessert-img");
     image.className = "dessert-image";
     image.src = dessert.image;
+
+    // Grab + update dessert calories
+    const calories = document.getElementById("dessert-calories");
+    calories.innerText = `${dessert.calories} calories`;
   
     // Grab + update dessert cost element
     const cost = document.getElementById("dessert-cost");
@@ -160,6 +164,7 @@ function formsubmit() {
 
         let i = data.likes;
         newLikeButton.innerText = `${i} likes`
+        newLikeButton.className = "rec-like-button"
 
         newLikeButton.addEventListener("click", (event) => {
           i++
@@ -203,6 +208,7 @@ function renderRecommendations(data){
 
   const recLikeButton = document.createElement("button")
   recLikeButton.innerText = `${data.likes} likes`
+  recLikeButton.className = "rec-like-button"
   let likeCounter = data.likes;
 
   recLikeButton.addEventListener("click", (event) => {

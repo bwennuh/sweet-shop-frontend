@@ -36,6 +36,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 50px auto auto;
+  font-family: 'Alegreya Sans SC', Geneva, Tahoma, sans-serif;
 }
 
 /* ----------------------------------------------------------------*/
@@ -48,14 +49,20 @@ body {
   align-content: center;
 }
 
+
+
 /* Formatting for the "See our dessert options!" button */
 #dessert-button{
   text-align: center;
-  font-size: 14pt;
-  font-family: 'Alegreya Sans SC', Geneva, Tahoma, sans-serif;
+  font-size: 16pt;
   border-radius: 5px;
   border: black 2px solid;
   height: 50px;
+  font-weight: 750;
+}
+
+#dessert-button:hover {
+  color: blue;
 }
 
 /* ----------------------------------------------------------------*/
@@ -69,9 +76,8 @@ body {
 
 /* Formatting for the dessert option list */
 .list-group-item {
-  /* list-style: none; */
+  list-style: none;
   font-size: 20pt;
-  font-family: 'Alegreya Sans SC', Geneva, Tahoma, sans-serif;
   cursor: pointer;
   background-color: white;
   margin: 10px 5px;
@@ -80,11 +86,15 @@ body {
   border-radius: 4px;
 }
 
-/* .list-group-item::before {
-  content: '🍰';
-  background-color: lightblue;
+.list-group-item:hover {
+  color: palevioletred;
+  font-weight: 750;
+}
+
+.list-group-item::before {
+  content: '❤️';
   margin-right: 10px;
-} */
+}
 
 .list-group-item::marker {
   color: rgb(170, 48, 89);
@@ -101,13 +111,12 @@ body {
 
 .card-header {
   text-align: center;
-  font-family: 'Alegreya Sans SC', Geneva, Tahoma, sans-serif;
 }
 
 /* Set dessert image max size */
 #dessert-img {
   display: flex;
-width: auto;
+  width: auto;
   max-height: 400px;
   border-radius: 25px;
   border: black 3px solid;
@@ -128,5 +137,42 @@ form {
   width: 40%;
 }
 
+h3.mb-2 {
+  font-size: 20pt;
+}
+
+
 /* ----------------------------------------------------------------*/
 
+#dessert-name {
+  font-size: 24pt;
+  font-weight: 900;
+}
+
+#dessert-calories {
+  font-size: 12pt;
+}
+
+#dessert-cost {
+  font-size: 18pt;
+}
+
+#like-button, #dislike-button, #submit-button, .rec-like-button {
+  font-family: 'Alegreya Sans SC', Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-size: 12pt;
+}
+
+.card-footer > label {
+  font-size: 14pt;
+  font-weight: 900;
+}
+
+.form-group > label, ol  {
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+input, select {
+  font-size: 16pt;
+}
