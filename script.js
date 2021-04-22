@@ -60,7 +60,6 @@ function renderDesserts(dessert) {
     const likeCount = document.querySelector("span.likes");
     likeCount.innerText = dessert.likes;
     likeCount.id = dessert.id;
-    console.log(likeCount.id);
     
     // Grab like button
     const likeButton = document.getElementById("like-button");
@@ -75,7 +74,6 @@ function renderDesserts(dessert) {
       likeButton.addEventListener("click", (event) => {
 
         dessert.likes = parseInt(dessert.likes) + 1;
-        console.log(dessert.likes)
 
         // Make a PATCH request to update like count for the associated dessert object
         const newLikes = {
@@ -182,7 +180,6 @@ function formsubmit() {
 
           fetch(recURL+data.id, patchSubmit)
           .then(resp => resp.json())
-          .then(updatedData => console.log(updatedData))
           
         })
 
@@ -227,7 +224,6 @@ function renderRecommendations(data){
 
     fetch(recURL+data.id, patchLikes)
     .then(resp => resp.json())
-    .then(updatedliker => console.log(updatedliker))
     
   })
 
