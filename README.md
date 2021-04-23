@@ -2,7 +2,7 @@
 
 Welcome to Eni & Brenna's Flatiron Phase 1 project, which is an app for a future dessert shop!
 
-![alt text](https://www.clipartkey.com/mpngs/m/27-270500_cookies-transparent-background-transparent-background-desserts-clipart.png)
+![desserts-image](https://www.clipartkey.com/mpngs/m/27-270500_cookies-transparent-background-transparent-background-desserts-clipart.png)
 
 **The Sweet Shop** app is an app for getting some feedback on our current dessert option contenders, and also getting some recommendations for other dessert ideas!
 
