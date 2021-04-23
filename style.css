@@ -233,9 +233,13 @@ input[type="text"] {
   font-size: 14pt;
 }
 
-.form-group > label, ol  {
+.form-group > label, ol {
   font-size: 16pt;
   font-weight: 900;
+}
+
+#comments {
+  width: 225px;
 }
 
 /* ----------------------------------------------------------------*/
