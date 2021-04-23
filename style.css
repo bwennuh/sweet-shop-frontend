@@ -238,6 +238,17 @@ input[type="text"] {
   font-weight: 900;
 }
 
+#rec-list {
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+.rec-list-item {
+  font-size: 16pt;
+  margin: 5px 0px;
+  font-style: normal;
+}
+
 #comments {
   width: 225px;
 }
