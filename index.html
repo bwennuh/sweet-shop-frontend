@@ -18,7 +18,7 @@
 
   <div class="main">
     <div class="dessert-button">
-      <button id="dessert-button">See our dessert options! 🍰</button>
+      <button id="dessert-button">See our current dessert options! 🍰</button>
     </div>
 
       <!-- <select id="dessert-list" name="dessert-list">
@@ -72,6 +72,7 @@
             <div class="form-group">
                 <label for="dessert-flavor">Flavor</label>
                 <select class="form-control">
+                    <option selected disabled>Choose a flavor</option>
                     <option id="vanilla-option">Vanilla</option>
                     <option id="strawberry-option">Strawberry</option>
                     <option id="chocolate-option">Chocolate</option>
@@ -80,7 +81,7 @@
 
             <div class="form-group">
                 <label for="comments">Comments</label>
-                <input name="userComments" type="text" class="form-control" placeholder="Enter any comments here">
+                <input id="comments" name="userComments" type="text" class="form-control" placeholder="Enter any comments here">
             </div>
 
             <button id="submit-button" type="submit">Submit</button>
