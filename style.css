@@ -27,7 +27,6 @@ body {
   border-radius: 25px;
   padding: 25px;
   margin: 25px 25%;
-
   text-shadow: 2px 2px #000000;
 }
 
@@ -64,7 +63,7 @@ body {
   font-size: 16pt;
   font-weight: 750;
   border-radius: 5px;
-  border: rgb(170, 48, 89) 2px solid;
+  border: rgb(170, 48, 89) 3px solid;
   height: fit-content;
   width: auto;
   display: flex;
@@ -94,19 +93,20 @@ div.dessert-list {
 .list-group-item::before {
   content: '♥';
   margin-right: 10px;
-  color:rgb(170, 48, 89)
+  color:rgb(170, 48, 89);
+  padding-left: 5px;
 }
 
 .list-group-item {
   list-style: none;
-  font-size: 20pt;
+  font-size: 22pt;
   cursor: pointer;
   background-color: white;
-  margin: 10px 5px;
-  padding: 5px;
+  margin: 20px 5px;
+  padding: 10px 5px;
   width: 250px;
   height: auto; 
-  border-radius: 5px;
+  border-radius: 10px;
   transition: 0.5s;
 }
 
@@ -117,7 +117,14 @@ div.dessert-list {
 .list-group-item:hover {
   color: palevioletred;
   font-weight: 1000;
+  text-shadow: 1px 1px rgb(170, 48, 89);
   transform: translate(25px);
+}
+
+.list-group-item:active, .list-group-item:active::before {
+  color: rgb(255, 0, 85);
+  font-weight: 1000;
+  text-shadow: 1px 1px rgb(170, 48, 89);
 }
 
 /* ----------------------------------------------------------------*/
