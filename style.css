@@ -186,11 +186,14 @@ text-align: center;
 #dessert-name {
   font-size: 24pt;
   font-weight: 900;
+  margin-top: 5px;
+  text-shadow: 1px 1px white;
 }
 
 /* Set dessert calories text formatting */
 #dessert-calories {
   font-size: 12pt;
+  margin: -15px 0px;
 }
 /* Set dessert cost text formatting */
 #dessert-cost {
@@ -262,7 +265,10 @@ input[type="text"] {
   text-align: center;
   font-size: 12pt;
   border-radius: 5px;
+}
 
+#like-button, #dislike-button {
+  margin: -5px 0px 10px 0px;
 }
 
 #submit-button {
