@@ -73,6 +73,7 @@ body {
   border-radius: 10px;
 }
 
+/* Formatting for when mouse is overtop of "See our dessert options!" button */
 #dessert-button:hover {
   color: palevioletred;
   cursor: pointer;
@@ -92,7 +93,7 @@ div.dessert-list {
   display: flex;
 }
 
-/* Formatting for the dessert option list */
+/* Formatting for the dessert option list heart icon */
 .list-group-item::before {
   content: '♥';
   margin-right: 10px;
@@ -100,6 +101,7 @@ div.dessert-list {
   padding-left: 5px;
 }
 
+/* Formatting for the dessert option list options */
 .list-group-item {
   list-style: none;
   font-size: 22pt;
@@ -113,6 +115,7 @@ div.dessert-list {
   transition: 0.5s;
 }
 
+/* Formatting for when hovering over the dessert list options */
 .list-group-item:hover::before {
   color: palevioletred;
 }
@@ -124,6 +127,7 @@ div.dessert-list {
   transform: translate(25px);
 }
 
+/* Formatting for when clicking on a dessert list option */
 .list-group-item:active, .list-group-item:active::before {
   color: rgb(255, 0, 85);
   font-weight: 1000;
@@ -155,10 +159,13 @@ div.dessert-list {
   margin: 10px 25% 20px 25%;
 }
 
+/* Formatting for the dessert card body w/ image, details */ 
+/* Formatting for the dessert card like/dislike buttons */
 .card-body, .card-footer {
 text-align: center;
 }
 
+/*Formatting for the dessert card like count label */
 .card-footer > label {
   font-size: 14pt;
   font-weight: 900;
@@ -206,6 +213,7 @@ text-align: center;
   border-radius: 25px;
 }
 
+/* Formatting for the form div and associated fields */
 form {
   width: 50%;
 }
