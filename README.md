@@ -32,4 +32,4 @@ And if you see a recommendation someone else has provided that you like too, fee
 
 ## See it working in action!
 
-<a href="https://youtu.be/P_sF25jPmJo">Welcome to the Sweet Shop App (recording!)</a>
+<a href="https://youtu.be/P_sF25jPmJo">Welcome to the Sweet Shop App (recording by Brenna!)</a>
