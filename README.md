@@ -30,4 +30,4 @@ And if you see a recommendation someone else has provided that you like too, fee
 
 ## See it working in action!
 
-![](20210429 - Sweet Shop App Recording - Brenna Bruening)
+![](20210429 - Sweet Shop App Recording - Brenna Bruening.mov)
