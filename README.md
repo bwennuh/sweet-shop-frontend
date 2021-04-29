@@ -1,5 +1,7 @@
 # The Sweet Shop App! 🍰
 
+---
+
 Welcome to Eni & Brenna's Flatiron Phase 1 project, which is an app for a future dessert shop!
 
 ![desserts-image](https://www.clipartkey.com/mpngs/m/27-270500_cookies-transparent-background-transparent-background-desserts-clipart.png)
@@ -30,4 +32,6 @@ And if you see a recommendation someone else has provided that you like too, fee
 
 ## See it working in action!
 
-![](20210429 - Sweet Shop App Recording - Brenna Bruening.mov)
+<video width="320" height="240" controls>
+  <source src="20210429 - Sweet Shop App Recording - Brenna Bruening.mov" type="video/mov">
+</video>
