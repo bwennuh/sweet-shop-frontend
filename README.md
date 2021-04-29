@@ -32,6 +32,4 @@ And if you see a recommendation someone else has provided that you like too, fee
 
 ## See it working in action!
 
-<video width="320" height="240" controls>
-  <source src="20210429 - Sweet Shop App Recording - Brenna Bruening.mov" type="video/mov">
-</video>
+![sweet-shop-video](https://youtu.be/P_sF25jPmJo)
