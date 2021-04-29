@@ -26,4 +26,8 @@ Obviously, there's no way that our current dessert list includes everyone's favo
 
 And if you see a recommendation someone else has provided that you like too, feel free to give it a 'like'!
 
+---
 
+## See it working in action!
+
+![](20210429 - Sweet Shop App Recording - Brenna Bruening)
